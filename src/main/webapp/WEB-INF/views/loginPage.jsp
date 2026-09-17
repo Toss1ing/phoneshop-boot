@@ -9,7 +9,12 @@
         <div class="col-md-4">
             <div class="card">
                 <div class="card-body">
-                    <form>
+                    <c:if test="${param.error != null}">
+                        <div class="error">
+                            Username or password not right
+                        </div>
+                    </c:if>
+                    <form action="${pageContext.request.contextPath}/login" method="post">
                         <div class="form-group row">
                             <label for="username" class="col-sm-3 col-form-label">
                                 Username:
@@ -30,7 +35,9 @@
                             <button type="submit" class="btn btn-primary">Login</button>
                         </div>
                         <div class="row justify-content-center">
-                            Login via GitHub >>
+                            <a href="${pageContext.request.contextPath}/oauth2/authorization/github">
+                                Login via GitHub >>
+                            </a>
                         </div>
                     </form>
                 </div>
