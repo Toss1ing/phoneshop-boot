@@ -3,6 +3,9 @@
 <c:url var="pdpLink" value="/phones/${phone.id}"/>
 <tr>
     <td>
+        <c:out value="${phone.id}" />
+    </td>
+    <td>
         <a href="${pdpLink}">
             <img src="<c:url value="https://raw.githubusercontent.com/andrewosipenko/phoneshop-ext-images/master/${phone.image}"/>" width="100" height="100" alt="Phone image">
         </a>
